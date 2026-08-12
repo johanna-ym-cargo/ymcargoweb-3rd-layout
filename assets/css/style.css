@@ -205,6 +205,7 @@ p {
 .btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: .5rem;
     padding: .85rem 1.75rem;
     border-radius: var(--radius-sm);
@@ -727,6 +728,13 @@ p {
     gap: var(--space-4);
     padding-block: var(--space-5);
     text-align: center;
+}
+
+/* On mobile (under 700px), if there are 3 items, center the 3rd item */
+@media (max-width: 699px) {
+    .stats__grid .stats__item:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+    }
 }
 
 .stats__item h3 {
@@ -1945,8 +1953,9 @@ p {
 }
 
 .footer-affiliates-inline img {
-    max-height: 32px;
     width: auto;
+    max-width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -2183,7 +2192,7 @@ p {
 .mission-vision {
     background-color: var(--ym-white, #ffffff);
     color: var(--color-text, #1c2333);
-    padding: var(--space-6, 4rem) var(--space-4, 2rem);
+    padding-block: var(--space-6, 4rem);
     position: relative;
 }
 
@@ -2245,7 +2254,7 @@ p {
 
 /* History section */
 .history-section {
-    padding: var(--space-6, 4rem) var(--space-4, 2rem);
+    padding-block: var(--space-6, 4rem);
     background-color: #ffffff;
 }
 
@@ -2286,7 +2295,7 @@ p {
 /* Affiliated Companies Sleek Feature Cards */
 /* White, matching the Company Profile section right above it (was navy). */
 .partners-section {
-    padding: var(--space-6, 4rem) var(--space-4, 2rem);
+    padding-block: var(--space-6, 4rem);
     background: var(--ym-white, #ffffff);
 }
 
@@ -2416,7 +2425,7 @@ p {
 
 /* Team section */
 .team-section {
-    padding: var(--space-6, 4rem) var(--space-4, 2rem);
+    padding-block: var(--space-6, 4rem);
 }
 
 .team-section .title-blue {
@@ -2586,7 +2595,7 @@ p {
    Core Values 3-Column Grid Cards
    -------------------------------------------------------------------------- */
 .values-section {
-    padding: var(--space-6, 4.5rem) var(--space-4, 2rem);
+    padding-block: var(--space-6, 4.5rem);
     background: #ffffff;
 }
 
@@ -2681,7 +2690,7 @@ p {
 
 /* Branches section & Tabs */
 .branches-section {
-    padding: var(--space-6, 4rem) var(--space-4, 2rem);
+    padding-block: var(--space-6, 4rem);
 }
 
 #branch-tabs {
@@ -4155,7 +4164,7 @@ p {
 
     .quote-form-footer {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
         text-align: center;
     }
 }
@@ -4520,6 +4529,7 @@ p {
     .job-filter-flat {
         grid-template-columns: 1fr 1fr;
     }
+
     .job-listings-wrap {
         grid-template-columns: 1fr;
     }
@@ -4783,17 +4793,21 @@ p {
     .career-contact-card {
         grid-template-columns: 1fr;
     }
+
     .career-contact-left {
         padding: 2.5rem 2rem;
         min-height: 0;
         justify-content: flex-start;
     }
+
     .career-contact-right {
         padding: 2rem;
     }
+
     .field-row.cols-2 {
         grid-template-columns: 1fr;
     }
+
     .career-contact-left--outline {
         border-right: none;
         border-bottom: 2px solid var(--ym-navy-deep, #000495);
@@ -4872,5 +4886,111 @@ p {
 @media (max-width: 720px) {
     .contact-quick-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* --- YM Cargo Feedback Mobile Tweaks --- */
+@media (max-width: 991px) {
+
+    /* Mobile General: Top section (Row 1: socials, Row 2: contact) */
+    .topbar__inner {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .topbar__contact {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .topbar__social {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Show the full image on mobile (don't crop it) */
+    .career-hero-photo,
+    .career-team-photo,
+    .hero,
+    .hero--video .video-wrap {
+        height: auto;
+        min-height: 0;
+    }
+
+    /* Center and shrink the career hero text on mobile */
+    .career-hero-overlay {
+        justify-content: center;
+        padding-left: 0;
+        padding-inline: 1rem;
+        padding-bottom: 1rem;
+        /* push to the very bottom on small screens */
+        text-align: center;
+    }
+
+    .career-hero-overlay h1 {
+        font-size: 1.4rem !important;
+    }
+
+    .career-hero-overlay h1 br {
+        display: none;
+        /* Let the text wrap naturally instead of forcing 3 rows */
+    }
+
+    .career-team-overlay {
+        position: absolute;
+        top: 2rem;
+        left: 0;
+        right: 0;
+        padding-inline: 1rem;
+        background-color: transparent;
+        text-align: center;
+    }
+
+    .career-team-overlay h2 {
+        font-size: 1.15rem !important;
+        text-shadow: 0 1px 8px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 255, 255, 0.7) !important;
+    }
+
+    /* Fix career form footer layout on small screens */
+    .career-form-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+    }
+
+    .career-form-footer .form-note {
+        text-align: center;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* About: Make the team 1 person each row */
+    .team-grid-container-wide {
+        grid-template-columns: 1fr !important;
+    }
+
+    .team-grid-container-wide .member-container {
+        border-right: none !important;
+        border-bottom: 1px solid #c3c3c3 !important;
+    }
+
+    .team-grid-container-wide .member-container:last-child {
+        border-bottom: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Adjust cursive font size for mobile */
+    .amsterdam-two {
+        font-size: 2.2rem !important;
     }
 }
