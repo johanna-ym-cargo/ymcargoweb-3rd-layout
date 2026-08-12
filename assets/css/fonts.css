@@ -1,0 +1,62 @@
+/* ==========================================================================
+   YM Cargo Transport Corp. - Brand Typeface
+   Primary typeface: Dubai (Microsoft/Government of Dubai family)
+   ==========================================================================
+   Licensed font files bundled at:
+     assets/fonts/Dubai-Light.woff2    (converted from assets/fonts/dubai/Dubai-Light.ttf)
+     assets/fonts/Dubai-Regular.woff2  (converted from assets/fonts/dubai/Dubai-Regular.ttf)
+     assets/fonts/Dubai-Medium.woff2   (converted from assets/fonts/dubai/Dubai-Medium.ttf)
+     assets/fonts/Dubai-Bold.woff2     (converted from assets/fonts/dubai/Dubai-Bold.ttf)
+
+   Each @font-face loads the compressed .woff2 first and falls back to the
+   original .ttf if a browser can't parse it. Headings and body text
+   (--font-brand in style.css) pick this up automatically across every page.
+   ========================================================================== */
+
+@font-face {
+    font-family: "Dubai";
+    src: url("../fonts/Dubai-Light.woff2") format("woff2"),
+        url("../fonts/dubai/Dubai-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Dubai";
+    src: url("../fonts/Dubai-Regular.woff2") format("woff2"),
+        url("../fonts/dubai/Dubai-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Dubai";
+    src: url("../fonts/Dubai-Medium.woff2") format("woff2"),
+        url("../fonts/dubai/Dubai-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Dubai";
+    src: url("../fonts/Dubai-Bold.woff2") format("woff2"),
+        url("../fonts/dubai/Dubai-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Amsterdam Two";
+    src: url("../fonts/amsterdam-two.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.amsterdam-two {
+    font-family: "Amsterdam Two", "Great Vibes", "Dancing Script", cursive, sans-serif !important;
+}
