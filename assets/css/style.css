@@ -1987,6 +1987,34 @@ p {
     }
 }
 
+/* Mobile footer refinements. Below 760px, .footer-grid drops to a single
+   column, so Offices and the Verse block stack instead of sitting
+   side-by-side — the border-left on .footer-verse was designed as a
+   column divider and reads as a stray vertical line once the block is
+   full-width, so it swaps to a border-top divider instead. */
+@media (max-width: 759px) {
+    .footer-top {
+        padding-block: var(--space-5) var(--space-4);
+    }
+
+    .footer-verse {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid var(--color-border);
+        padding-top: var(--space-4);
+        margin-top: var(--space-1);
+    }
+}
+
+/* Below 480px, two columns of office addresses wrap onto 4-5 lines each
+   and get hard to scan, so drop to a single column list instead. */
+@media (max-width: 480px) {
+    .offices-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+}
+
 .back-to-top {
     position: fixed;
     right: var(--space-4);
@@ -3969,7 +3997,7 @@ p {
    is a straight internal line and only the four outer corners are rounded. */
 .quote-card-split {
     display: grid;
-    grid-template-columns: 380px 1fr;
+    grid-template-columns: 460px 1fr;
     gap: 0;
     border-radius: var(--radius-md, 16px);
     overflow: hidden;
@@ -3978,12 +4006,12 @@ p {
 .quote-card-left {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 1.25rem;
     min-height: 480px;
     background:
         linear-gradient(180deg, rgba(0, 4, 149, .6) 0%, rgba(0, 4, 149, .48) 50%, rgba(0, 4, 149, .6) 100%),
-        url("../img/career-team-3.jpg") center / cover no-repeat;
+        url("../img/career-form.jpg") center / cover no-repeat;
     color: #ffffff;
     padding: 3.5rem 2.5rem;
 }
@@ -4546,7 +4574,7 @@ p {
    -------------------------------------------------------------------------- */
 .career-contact-card {
     display: grid;
-    grid-template-columns: 380px 1fr;
+    grid-template-columns: 460px 1fr;
     border-radius: var(--radius-md, 16px);
     overflow: hidden;
     background: transparent;
@@ -4557,12 +4585,12 @@ p {
 .career-contact-left {
     background:
         linear-gradient(180deg, rgba(0, 4, 149, .6) 0%, rgba(0, 4, 149, .48) 50%, rgba(0, 4, 149, .6) 100%),
-        url("../img/career-team-3.jpg") center / cover no-repeat;
+        url("../img/career-form.jpg") center / cover no-repeat;
     color: #ffffff;
     padding: 3.5rem 2.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 1.5rem;
     min-height: 480px;
 }
