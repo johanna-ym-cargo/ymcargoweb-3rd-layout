@@ -11,7 +11,7 @@
     /* Brand colors, deliberately just navy + white. No gold/blue/teal
        accents: --ym-navy-deep is only a darker tint of the same primary
        navy (used for the footer and date badges), not a second hue. */
-    --ym-navy: #020277;
+    --ym-navy: #000495;
     /* primary brand navy, headings, nav, buttons, links, all accents */
     --ym-navy-deep: #000495;
     /* deepest navy tint, badges, footer */
@@ -1900,6 +1900,8 @@ p {
 @media (min-width: 900px) {
     .offices-grid {
         grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: auto auto;
+        grid-auto-flow: column;
     }
 }
 

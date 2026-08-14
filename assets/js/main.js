@@ -80,9 +80,9 @@
                 if (!start) start = ts;
                 var progress = Math.min((ts - start) / duration, 1);
                 var eased = 1 - Math.pow(1 - progress, 3);
-                el.textContent = Math.floor(eased * target).toLocaleString() + suffix;
+                el.textContent = Math.floor(eased * target).toLocaleString().replace(/,/g, ', ') + suffix;
                 if (progress < 1) requestAnimationFrame(step);
-                else el.textContent = target.toLocaleString() + suffix;
+                else el.textContent = target.toLocaleString().replace(/,/g, ', ') + suffix;
             }
             requestAnimationFrame(step);
         };
